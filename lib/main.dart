@@ -10,32 +10,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      title: 'Login page demo',
+      debugShowCheckedModeBanner: false,
+      home: LoginPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  TextStyle getBasicStyle(
-      {double fontSize = 16,
-      Color color = Colors.white,
-      FontWeight fontWeight = FontWeight.w600}) {
+  TextStyle getBasicStyle({
+    double fontSize = 16,
+    Color color = Colors.white,
+    FontWeight fontWeight = FontWeight.w600,
+  }) {
     return TextStyle(fontSize: fontSize, fontWeight: fontWeight, color: color);
   }
 
@@ -58,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 50,
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Text(
                 "E-Mail",
@@ -80,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
             ),
             const SizedBox(height: 20),
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Text(
                 "Passwort",
@@ -91,11 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10), color: Colors.white),
-              child:  Center(
+              child: Center(
                   child: TextField(
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.all(15),
-                  hintStyle: getBasicStyle(fontWeight: FontWeight.w500,color: Colors.grey),
+                  hintStyle: getBasicStyle(
+                      fontWeight: FontWeight.w500, color: Colors.grey),
                   hintText: "Passwort",
                   border: InputBorder.none,
                 ),
@@ -109,7 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: const Color(0xFFF9D679),
                     borderRadius: BorderRadius.circular(15)),
                 padding: const EdgeInsets.all(20),
-                child:  Center(
+                child: Center(
                   child: Text(
                     "Amelden",
                     style: getBasicStyle(color: Colors.black),
@@ -130,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 50,
             ),
-             Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,7 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(
               height: 50,
             ),
-             Center(
+            Center(
               child: Text(
                 "Kostenlos registrieren",
                 style: getBasicStyle(),
